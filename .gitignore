@@ -1,0 +1,12 @@
+*.iso
+*.vdi
+*.vmdk
+*.vhd
+*.vhdx
+*.ova
+*.sav
+*.keytab
+*.ccache
+.env
+/secrets/
+/backups/
