@@ -69,3 +69,69 @@ getent ahostsv4 download.basealt.ru
 ### Следующий шаг
 
 Сохранить снимок исходного состояния ВМ, если ещё не создан. Настроить постоянный IP-адрес сервера и подготовить систему к развёртыванию домена. ОС на клиентах пока не установлены.
+
+## 28 сентября 2026 года
+
+### Выполнено
+
+* Настроил постоянный IP-адрес dc1: 10.77.0.10/24, шлюз — 10.77.0.1. Сетью управляет etcnet.
+* Обновил систему и ядро. После перезагрузки версия ядра — 6.12.110-6.12-alt1.
+* Проверил синхронизацию времени и часовой пояс Europe/Moscow.
+* Установил task-samba-dc. Версия Samba — 4.21.9-alt4.p11.1.
+* Создал домен lab.test с коротким именем LAB. Контроллер — dc1.lab.test, DNS — встроенный SAMBA_INTERNAL.
+* Установил созданную Samba конфигурацию Kerberos.
+* Включил службу samba и её автоматический запуск.
+* Переключил DNS сервера на 127.0.0.1.
+* Проверил работу контроллера после перезагрузки.
+* Выключил ВМ и создал снимок 02-domain-ready. Предыдущий снимок 01-clean-install сохранён.
+
+### Основные команды
+
+Команды выполнялись в консоли dc1 с правами root.
+
+```bash
+apt-get update
+apt-get dist-upgrade
+update-kernel
+apt-get clean
+apt-get install task-samba-dc
+samba-tool domain provision
+cp /var/lib/samba/private/krb5.conf /etc/krb5.conf
+systemctl enable --now samba
+samba-tool domain info 127.0.0.1
+host -t SRV _kerberos._udp.lab.test
+kinit Administrator@LAB.TEST
+klist
+smbclient -L dc1.lab.test -U Administrator
+samba_dnsupdate
+echo $?
+```
+
+Перед изменением конфигураций сохранил копии исходных файлов.
+
+### Возникшая проблема и решение
+
+При первом запуске Samba появились сообщения WERR_DNS_ERROR_RECORD_ALREADY_EXISTS и ошибка обновления DNS.
+
+Проверка показала, что встроенный DNS Samba отвечает правильно, но система продолжает использовать внешний DNS 172.19.41.204.
+
+В /etc/net/ifaces/enp0s3/resolv.conf записал:
+
+```text
+nameserver 127.0.0.1
+search lab.test
+```
+
+Применил настройки командой systemctl restart network. После этого samba_dnsupdate завершилась без сообщений с кодом 0. Внешние имена также продолжили разрешаться.
+
+### Результаты проверки
+
+* Домен отвечает как lab.test, контроллер — dc1.lab.test.
+* Получен билет Kerberos krbtgt/LAB.TEST@LAB.TEST.
+* В списке общих ресурсов присутствуют sysvol и netlogon.
+* После перезагрузки служба samba активна, постоянный IP и настройки DNS сохраняются.
+* Повторная проверка samba_dnsupdate завершилась с кодом 0.
+
+### Следующий шаг
+
+Подготовить синхронизацию времени для клиентов. Установить ALT Workstation на pc1 и pc2, настроить сеть и подключить обе машины к домену.
