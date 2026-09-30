@@ -1,0 +1,42 @@
+Проверка доменного пользователя на pc1
+Дата: 30 сентября 2026 года
+Домен: lab.test
+Kerberos realm: LAB.TEST
+Клиент: pc1.lab.test, 10.77.0.21/24
+Контроллер домена: dc1.lab.test, 10.77.0.10
+Пользователь: student1
+
+Источник: вывод команд, скопированный из терминала pc1.
+Вторая часть выполнена в сеансе student1 после графического входа.
+
+1. Получение сведений о пользователе до входа в его сеанс
+
+[root@pc1 ~]# getent passwd student1@lab.test
+student1:*:1164001104:1164000513:student1:/home/LAB.TEST/student1:/bin/bash
+[root@pc1 ~]# id student1@lab.test
+uid=1164001104(student1) gid=1164000513(domain users) группы=1164000513(domain users),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+
+2. Проверка после графического входа под student1
+
+[student1@pc1 ~]$ whoami
+student1
+[student1@pc1 ~]$ id
+uid=1164001104(student1) gid=1164000513(domain users) группы=1164000513(domain users),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video)
+[student1@pc1 ~]$ echo "$HOME"
+/home/LAB.TEST/student1
+[student1@pc1 ~]$ klist
+Ticket cache: KEYRING:persistent:1164001104:krb_ccache_LTFQrm7
+Default principal: student1@LAB.TEST
+
+Valid starting       Expires              Service principal
+30.09.2026 18:01:54  01.10.2026 04:01:54  krbtgt/LAB.TEST@LAB.TEST
+	renew until 07.10.2026 18:01:54
+
+Результат
+
+Пользователь определяется на pc1, вход в его графический сеанс выполнен.
+В сеансе используются UID 1164001104 и домашний каталог
+/home/LAB.TEST/student1. В кеше есть TGT для student1@LAB.TEST.
+
+Вывод klist приведён как текст. Файл кеша билетов в репозиторий не добавлялся.
+Применение конкретной групповой политики этой проверкой не подтверждается.
