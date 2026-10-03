@@ -1,0 +1,20 @@
+Проверка pc2 после обновления системы
+Дата: 1 октября 2026 года
+Источник: вывод команд, скопированный из терминала.
+Часовой пояс вывода: Europe/Moscow.
+
+[gudzichek-pc2@pc2 ~]$ uname -r
+6.12.110-6.12-alt1
+[gudzichek-pc2@pc2 ~]$ timedatectl
+               Local time: Чт 2026-10-01 18:16:21 MSK
+           Universal time: Чт 2026-10-01 15:16:21 UTC
+                 RTC time: Чт 2026-10-01 15:16:21
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+[gudzichek-pc2@pc2 ~]$
+
+Результат: pc2 загрузился с ядром 6.12.110-6.12-alt1;
+время синхронизировано, служба NTP активна.
+Фактический источник времени в этом выводе не указан.

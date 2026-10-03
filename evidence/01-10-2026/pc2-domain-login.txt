@@ -1,0 +1,31 @@
+Проверка доменного входа на pc2
+Дата: 1 октября 2026 года
+Домен: lab.test
+Kerberos realm: LAB.TEST
+Источник: вывод команд, скопированный из терминала.
+Команды выполнены в графическом сеансе student1, без перехода в root.
+
+[student1@pc2 ~]$ hostname -f
+pc2.lab.test
+[student1@pc2 ~]$ whoami
+student1
+[student1@pc2 ~]$ id
+uid=1164001104(student1) gid=1164000513(domain users) группы=1164000513(domain users),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video)
+[student1@pc2 ~]$ echo "$HOME"
+/home/LAB.TEST/student1
+[student1@pc2 ~]$ klist
+Ticket cache: KEYRING:persistent:1164001104:krb_ccache_zYLzkLE
+Default principal: student1@LAB.TEST
+
+Valid starting       Expires              Service principal
+01.10.2026 18:30:43  02.10.2026 04:30:43  krbtgt/LAB.TEST@LAB.TEST
+	renew until 08.10.2026 18:30:43
+[student1@pc2 ~]$ systemctl is-active sssd
+active
+[student1@pc2 ~]$
+
+Результат: доменный пользователь вошёл на второй клиент.
+UID, основной GID и принципал Kerberos совпали с результатом на pc1.
+В сеансе присутствует TGT, SSSD активен.
+Совпадение путей домашнего каталога не означает общего хранения файлов.
+Файл кеша билетов в подборку не включён: здесь только текст вывода klist.
