@@ -1,0 +1,117 @@
+Источник: переданный текст проверки pc1 перед E02.
+Точная дата исходного вывода отдельно не указана.
+
+[gudzichek-pc1@pc1 ~]$ su -
+Password: 
+[root@pc1 ~]# getent -s files passwd gudzichek-pc1
+gudzichek-pc1:x:1000:1000:Daniel,,,:/home/gudzichek-pc1:/bin/bash
+[root@pc1 ~]# getent -s files passwd student1
+[root@pc1 ~]# getent -s sss passwd student1@lab.test
+student1:*:1164001104:1164000513:student1:/home/LAB.TEST/student1:/bin/bash
+[root@pc1 ~]# cat /etc/nsswitch.conf
+#
+# Please refer to nsswitch.conf(5) for more information on this file.
+#
+# This is the Name Service Switch configuration file.  This file should
+# be sorted with the most-used databases at the beginning.
+#
+# Specifying '[NOTFOUND=return]' means that the search for an entry
+# should stop if the search with the previous service turned up nothing.
+# Note that if the search failed due to some other reason (like no NIS
+# server responding) then the search continues with the next service.
+#
+# Legal name services are:
+#
+#	files			Use local files
+#	tcb			Use local tcb shadow files, see tcb(5)
+#	db			Use local database files under /var/db
+#	nis or yp		Use NIS (NIS version 2), also called YP
+#	nisplus or nis+		Use NIS+ (NIS version 3)
+#	dns			Use DNS (Domain Name Service)
+#	compat			Use NIS in compatibility mode
+#	hesiod			Use Hesiod for user lookups
+#	[NOTFOUND=return]	Stop searching if not found so far
+#
+
+passwd: files sss
+shadow: tcb files sss
+group: files [SUCCESS=merge] sss role
+gshadow:    files
+
+hosts:      files myhostname mdns4_minimal [NOTFOUND=return] dns
+
+# To use db, put the "db" in front of "files" for things you want to be
+# looked up first in the db files.
+#
+#passwd:    db files nisplus nis
+#shadow:    db tcb files nisplus nis
+#group:     db files nisplus nis
+#
+#hosts:     db files nisplus nis dns
+
+ethers:     files
+netmasks:   files
+networks:   files
+protocols:  files
+rpc:        files
+services:   files
+
+# Example - obey only what nisplus tells us...
+#services:  nisplus [NOTFOUND=return] files
+#networks:  nisplus [NOTFOUND=return] files
+#protocols: nisplus [NOTFOUND=return] files
+#rpc:       nisplus [NOTFOUND=return] files
+#ethers:    nisplus [NOTFOUND=return] files
+#netmasks:  nisplus [NOTFOUND=return] files
+#bootparams: nisplus [NOTFOUND=return] files
+#netgroup:   nisplus
+#publickey:  nisplus
+
+automount:  files
+aliases:    files
+[root@pc1 ~]# cat /etc/pam.d/system-auth
+#%PAM-1.0
+#
+# Hybrid authentication with conditional branching.
+# The 'system-check-localuser' module determines the authentication path:
+# - Local users (in /etc/passwd) are processed by the 'local-only' substack.
+# - Non-local users with UID meeting a specific threshold are processed by the
+#   'sss-only' substack.
+# - Other cases are handled according to the router's mode (legacy or systemd).
+#
+# Post-condition stack summary:
+#
+# Condition                        | Action                    | Rule
+# ----------------------------------------------------------------------------
+# Local user (or treated as local) | Proceeds to the next line | 'local-only'
+# Specific non-local user          | Jumps over two lines      | 'method-only'
+# Critical failure (default=bad)   | Marks the stack as failed | 'local-only'
+# Termination (default=die)        | Entire authentication stack terminates.
+
+auth		include		system-check-localuser
+auth		substack	system-auth-local-only
+auth		[default=1]	pam_permit.so
+auth		substack	system-auth-sss-only
+auth		substack	system-auth-common
+
+account		include		system-check-localuser
+account		substack	system-auth-local-only
+account		[default=1]	pam_permit.so
+account		substack	system-auth-sss-only
+account		substack	system-auth-common
+
+password	include		system-check-localuser
+password	substack	system-auth-local-only
+password	[default=1]	pam_permit.so
+password	substack	system-auth-sss-only
+password	substack	system-auth-common
+
+session		include		system-check-localuser
+session		substack	system-auth-local-only
+session		[default=1]	pam_permit.so
+session		substack	system-auth-sss-only
+session		substack	system-auth-common
+[root@pc1 ~]# exit
+выход
+[gudzichek-pc1@pc1 ~]$ echo "$XDG_CURRENT_DESKTOP"
+GNOME

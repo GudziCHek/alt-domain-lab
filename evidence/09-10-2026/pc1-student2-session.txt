@@ -1,0 +1,21 @@
+Ручная расшифровка основных команд и результатов со скриншота 09-pc1-student2-login.png.
+Переносы строки id объединены. На pc1 промежуточная опечатка перед systemctl не переписана.
+Из klist перенесены принципал и сроки TGT; имя кеша не переписано.
+Дата проверки: 09.10.2026. Исходное изображение является первичным подтверждением.
+
+[student2@pc1 ~]$ hostname -f
+pc1.lab.test
+[student2@pc1 ~]$ whoami
+student2
+[student2@pc1 ~]$ id
+uid=1164001106(student2) gid=1164000513(domain users) группы=1164000513(domain users),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video),1164001107(lab-students)
+[student2@pc1 ~]$ echo "$HOME"
+/home/LAB.TEST/student2
+[student2@pc1 ~]$ klist
+Default principal: student2@LAB.TEST
+
+Valid starting       Expires              Service principal
+09.10.2026 11:10:49  09.10.2026 21:10:49  krbtgt/LAB.TEST@LAB.TEST
+    renew until 16.10.2026 11:10:49
+[student2@pc1 ~]$ systemctl is-active sssd
+active

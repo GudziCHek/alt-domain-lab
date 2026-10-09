@@ -1,0 +1,31 @@
+Ручная расшифровка ключевых строк скриншотов за 9 октября 2026 года.
+Это сокращённый результат; остальные атрибуты и переносы строк смотрите на изображениях.
+
+ДО сохранения членства
+Источник: 05-dc1-student2-before-membership.png
+samba-tool user show student2
+dn: CN=student2,OU=Lab,DC=lab,DC=test
+userPrincipalName: student2@lab.test
+Строка memberOf отсутствует.
+
+Источник: 06-dc1-group-before-membership.png
+samba-tool group show lab-students
+dn: CN=lab-students,OU=Lab,DC=lab,DC=test
+Строка member отсутствует.
+samba-tool group listmembers lab-students
+Вывода участников нет.
+
+ПОСЛЕ сохранения членства
+Источник: 07-dc1-student2-memberof.png
+samba-tool user show student2
+dn: CN=student2,OU=Lab,DC=lab,DC=test
+userPrincipalName: student2@lab.test
+memberOf: CN=lab-students,OU=Lab,DC=lab,DC=test
+
+Источник: 08-dc1-group-member-confirmed.png
+samba-tool group show lab-students
+dn: CN=lab-students,OU=Lab,DC=lab,DC=test
+member: CN=student2,OU=Lab,DC=lab,DC=test
+
+samba-tool group listmembers lab-students
+student2

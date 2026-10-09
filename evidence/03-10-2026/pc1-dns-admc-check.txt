@@ -1,0 +1,44 @@
+Источник: текст результата проверки, переданный 3 октября 2026 года.
+Это сохранённый вывод прежнего этапа, а не новый запуск команд.
+
+[root@pc1 ~]# host -W 2 ftp.altlinux.org 10.77.0.10
+Using domain server:
+Name: 10.77.0.10
+Address: 10.77.0.10#53
+Aliases: 
+
+ftp.altlinux.org has address 62.152.55.238
+[root@pc1 ~]# apt-get update
+Получено: 1 http://ftp.altlinux.org p11/branch/x86_64 release [4210B]
+Получено: 2 http://ftp.altlinux.org p11/branch/x86_64-i586 release [1665B]
+Получено: 3 http://ftp.altlinux.org p11/branch/noarch release [2831B]
+Получено 8706B за 0s (29,3kB/s).               
+Получено: 1 http://ftp.altlinux.org p11/branch/x86_64/classic pkglist [29,6MB]
+Получено: 2 http://ftp.altlinux.org p11/branch/x86_64/classic release [137B]
+Получено: 3 http://ftp.altlinux.org p11/branch/x86_64-i586/classic pkglist [20,3MB]
+Получено: 4 http://ftp.altlinux.org p11/branch/x86_64-i586/classic release [142B]
+Получено: 5 http://ftp.altlinux.org p11/branch/noarch/classic pkglist [7942kB]
+Получено: 6 http://ftp.altlinux.org p11/branch/noarch/classic release [137B]
+Получено 57,8MB за 10s (5357kB/s).                                             
+Чтение списков пакетов... Завершено
+Построение дерева зависимостей... Завершено
+[root@pc1 ~]# apt-get install admc
+Чтение списков пакетов... Завершено
+Построение дерева зависимостей... Завершено
+Последняя версия admc уже установлена.
+0 будет обновлено, 0 новых установлено, 0 пакетов будет удалено и 17 не будет обновлено.
+[root@pc1 ~]# rpm -q admc
+admc-0.24.0-alt1.x86_64
+[root@pc1 ~]# exit
+выход
+[gudzichek-pc1@pc1 ~]$ kinit Administrator@LAB.TEST
+Password for Administrator@LAB.TEST: 
+Warning: Your password will expire in 37 days on Пн 09 ноя 2026 17:13:02
+[gudzichek-pc1@pc1 ~]$ klist
+Ticket cache: KEYRING:persistent:1000:1000
+Default principal: Administrator@LAB.TEST
+
+Valid starting       Expires              Service principal
+03.10.2026 11:10:50  03.10.2026 21:10:50  krbtgt/LAB.TEST@LAB.TEST
+	renew until 10.10.2026 11:10:41
+[gudzichek-pc1@pc1 ~]$ admc

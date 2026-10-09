@@ -1,0 +1,8 @@
+Источник: текст результата проверки pc1, переданный перед графическими входами E02.
+
+[gudzichek-pc1@pc1 ~]$ getent passwd student2@lab.test
+student2:*:1164001106:1164000513:student2:/home/LAB.TEST/student2:/bin/bash
+[gudzichek-pc1@pc1 ~]$ id student2@lab.test
+uid=1164001106(student2) gid=1164000513(domain users) группы=1164000513(domain users),1164001107(lab-students),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+[gudzichek-pc1@pc1 ~]$ getent group lab-students@lab.test
+lab-students:*:1164001107:student2
