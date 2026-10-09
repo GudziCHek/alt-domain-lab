@@ -1,0 +1,62 @@
+E09 — роли и финальные новые графические сеансы, pc2
+Дата: 9 октября 2026 года.
+Происхождение: текст команд, переданный пользователем; выбранные фрагменты.
+Кадры 19 и 20 подтверждают итоговые доменный и локальный сеансы.
+
+1. Настройки ролей до дополнения
+
+[root@pc2 ~]# rolelst -V
+# Settings read from /etc/role:
+users:vmusers
+# Resulting settings merged with /etc/role.d entries
+users:vmusers,usershares,cdwriter,cdrom,audio,video,proc,radio,camera,floppy,xgrp,scanner,uucp,fuse,vboxadd
+localadmins:wheel,vboxadd
+powerusers:remote,vboxadd
+vboxadd:vboxsf
+
+2. Резервная копия и явное добавление доменной группы к обычной роли users
+
+[root@pc2 ~]# tar -czf /root/roles-e09-before-update-2026-10-09.tar.gz -C /etc role role.d
+[root@pc2 ~]# echo "backup exit code: $?"
+backup exit code: 0
+[root@pc2 ~]# roleadd 'domain users@LAB.TEST' users
+[root@pc2 ~]# rolelst
+users:vmusers,usershares,cdwriter,cdrom,audio,video,proc,radio,camera,floppy,xgrp,scanner,uucp,fuse,vboxadd
+domain users@LAB.TEST:users
+localadmins:wheel,vboxadd
+powerusers:remote,vboxadd
+vboxadd:vboxsf
+[root@pc2 ~]# id e09same@lab.test
+uid=1164001108(e09same@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+[root@pc2 ~]# id student2@lab.test
+uid=1164001106(student2@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),1164001107(lab-students@LAB.TEST),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+[root@pc2 ~]# id e09same
+uid=1001(e09same) gid=1001(e09same) группы=1001(e09same)
+
+3. Финальный новый доменный сеанс после повторного запуска pc2
+
+[e09same@LAB.TEST@pc2 ~]$ id
+uid=1164001108(e09same@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video)
+[e09same@LAB.TEST@pc2 ~]$ echo "$HOME"
+/home/LAB.TEST/e09same
+[e09same@LAB.TEST@pc2 ~]$ klist
+Ticket cache: KEYRING:persistent:1164001108:krb_ccache_S4X4ILh
+Default principal: e09same@LAB.TEST
+
+Valid starting       Expires              Service principal
+09.10.2026 20:41:21  10.10.2026 06:41:21  krbtgt/LAB.TEST@LAB.TEST
+	renew until 16.10.2026 20:41:21
+
+4. Финальный новый локальный сеанс
+
+[e09same@pc2 ~]$ id
+uid=1001(e09same) gid=1001(e09same) группы=1001(e09same)
+[e09same@pc2 ~]$ echo "$HOME"
+/home/e09same
+[e09same@pc2 ~]$ klist
+klist: Credentials cache keyring 'persistent:1001:1001' not found
+
+Вывод: в итоговых сеансах доменная и локальная записи имеют разные UID, домашние
+каталоги и наборы групп; билет присутствует в доменном сеансе. Новое правило связывает
+domain users@LAB.TEST с users; localadmins/wheel не назначались этим действием.
+Фактический доступ к устройствам отдельно не проверялся.

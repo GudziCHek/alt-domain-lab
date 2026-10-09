@@ -1,0 +1,96 @@
+E09 — источники учётных записей и создание локального тёзки, pc2
+Дата: 9 октября 2026 года.
+Происхождение: выбранные фрагменты текста команд, переданного пользователем.
+Фрагменты относятся к последовательным проверкам; это не непрерывный машинный журнал.
+Пустой результат getent обозначен отсутствием строки перед следующей командой.
+
+1. Исходная локальная учётная запись и доменный student2
+
+[gudzichek-pc2@pc2 ~]$ hostname -f
+pc2.lab.test
+[gudzichek-pc2@pc2 ~]$ whoami
+gudzichek-pc2
+[gudzichek-pc2@pc2 ~]$ getent -s files passwd gudzichek-pc2
+gudzichek-pc2:x:1000:1000:Gudzichek,,,:/home/gudzichek-pc2:/bin/bash
+[gudzichek-pc2@pc2 ~]$ getent -s files passwd student2
+[gudzichek-pc2@pc2 ~]$ getent -s sss passwd student2@lab.test
+student2:*:1164001106:1164000513:student2:/home/LAB.TEST/student2:/bin/bash
+[gudzichek-pc2@pc2 ~]$ id student2@lab.test
+uid=1164001106(student2) gid=1164000513(domain users) группы=1164000513(domain users),1164001107(lab-students),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+
+Содержательные строки переданного cat /etc/nsswitch.conf:
+passwd: files sss
+shadow: tcb files sss
+group: files [SUCCESS=merge] sss role
+
+2. Версия SSSD и выбранные параметры до изменения
+
+[gudzichek-pc2@pc2 ~]$ rpm -q sssd
+sssd-2.9.8-alt3.x86_64
+[gudzichek-pc2@pc2 ~]$ getent passwd student2
+student2:*:1164001106:1164000513:student2:/home/LAB.TEST/student2:/bin/bash
+[gudzichek-pc2@pc2 ~]$ getent passwd student2@lab.test
+student2:*:1164001106:1164000513:student2:/home/LAB.TEST/student2:/bin/bash
+
+Команды далее выполнялись под root после su - из gudzichek-pc2:
+[root@pc2 ~]# grep -E '^[[:space:]]*(\[|(domains|services|id_provider|auth_provider|access_provider|use_fully_qualified_names|ldap_id_mapping|full_name_format|default_domain_suffix|case_sensitive)[[:space:]]*=)' /etc/sssd/sssd.conf
+[sssd]
+services = nss, pam
+domains = LAB.TEST
+[nss]
+[pam]
+[domain/LAB.TEST]
+id_provider = ad
+auth_provider = ad
+access_provider = ad
+
+3. Доменный e09same до создания локальной записи
+
+[gudzichek-pc2@pc2 ~]$ getent -s files passwd e09same
+[gudzichek-pc2@pc2 ~]$ getent -s sss passwd e09same@lab.test
+e09same:*:1164001108:1164000513:e09same:/home/LAB.TEST/e09same:/bin/bash
+[gudzichek-pc2@pc2 ~]$ getent passwd e09same
+e09same:*:1164001108:1164000513:e09same:/home/LAB.TEST/e09same:/bin/bash
+[gudzichek-pc2@pc2 ~]$ getent passwd e09same@lab.test
+e09same:*:1164001108:1164000513:e09same:/home/LAB.TEST/e09same:/bin/bash
+[gudzichek-pc2@pc2 ~]$ id e09same@lab.test
+uid=1164001108(e09same) gid=1164000513(domain users) группы=1164000513(domain users),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+
+Графический контрольный вход этого пользователя подтверждён отдельно кадром 12.
+
+4. Отказ useradd при доступной доменной записи
+
+[root@pc2 ~]# useradd -m -d /home/e09same -s /bin/bash -c "E09 local account" e09same
+useradd: пользователь «e09same» уже существует
+[root@pc2 ~]# echo "useradd exit code: $?"
+useradd exit code: 9
+[root@pc2 ~]# getent -s files passwd e09same
+[root@pc2 ~]# getent -s sss passwd e09same@lab.test
+e09same:*:1164001108:1164000513:e09same:/home/LAB.TEST/e09same:/bin/bash
+
+5. Подготовка локального тёзки с временной остановкой SSSD
+
+[root@pc2 ~]# systemctl stop sssd
+[root@pc2 ~]# SSS_NSS_USE_MEMCACHE=NO useradd -m -d /home/e09same -s /bin/bash -c "E09 local account" e09same
+[root@pc2 ~]# echo "useradd exit code: $?"
+useradd exit code: 0
+[root@pc2 ~]# systemctl start sssd
+[root@pc2 ~]# systemctl is-active sssd
+active
+[root@pc2 ~]# getent -s files passwd e09same
+e09same:x:1001:1001:E09 local account:/home/e09same:/bin/bash
+[root@pc2 ~]# getent -s sss passwd e09same@lab.test
+e09same:*:1164001108:1164000513:e09same:/home/LAB.TEST/e09same:/bin/bash
+[root@pc2 ~]# getent passwd e09same
+e09same:x:1001:1001:E09 local account:/home/e09same:/bin/bash
+[root@pc2 ~]# getent passwd e09same@lab.test
+e09same:*:1164001108:1164000513:e09same:/home/LAB.TEST/e09same:/bin/bash
+
+6. Установка локального пароля
+
+Выполнено passwd e09same под root. Из вывода сохранены только две итоговые строки:
+Weak password: not enough different characters or classes for this length.
+passwd: all authentication tokens updated successfully.
+
+Интерактивные поля, предложенный генератором пример и введённый пароль не включены.
+Эта операция не является проверкой доменной парольной политики E03.
