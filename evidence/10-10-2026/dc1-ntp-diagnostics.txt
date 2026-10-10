@@ -1,0 +1,55 @@
+Дата: 10 октября 2026 года.
+Происхождение: ручная расшифровка выбранных строк кадров 14–18.
+Выводы разных команд получены последовательно; это не полный журнал ВМ.
+
+=== Первоначальная проверка dc1 ===
+$ hostname -f
+dc1.lab.test
+$ date '+%F %T %Z %z'
+2026-10-10 10:56:01 MSK +0300
+$ date -u '+%F %T UTC'
+2026-10-10 07:56:17 UTC
+$ timedatectl status
+               Local time: Сб 2026-10-10 10:56:25 MSK
+           Universal time: Сб 2026-10-10 07:56:25 UTC
+                 RTC time: Сб 2026-10-10 07:56:25
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+chronyd.service: loaded active running, NTP client/server
+
+=== Диагностика под root ===
+# chronyc tracking
+Reference ID    : B9D3F42F (185.211.244.47)
+Stratum         : 3
+Ref time (UTC)  : Sat Oct 10 08:01:47 2026
+Leap status     : Normal
+# chronyc -n sources -v
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^* 185.211.244.47                2   9   377    89  +1003us[+1311us] +/-   21ms
+^- 87.103.245.205                2   7   277    79    +32ms[  +32ms] +/-   78ms
+^- 95.217.251.167                2   8   255   213    +40ms[  +40ms] +/-   63ms
+^- 185.251.115.30                1   9   377   331   -707us[ -446us] +/-   19ms
+# chronyc accheck 10.77.0.21
+209 Access denied
+# chronyc accheck 10.77.0.22
+209 Access denied
+# ss -lunp 'sport = :123'
+State Recv-Q Send-Q Local Address:Port Peer Address:Port Process
+Далее строк сокетов в показанном выводе нет.
+
+=== Выбранные строки /etc/chrony.conf до исправления ===
+driftfile /var/lib/chrony/drift
+makestep 1.0 3
+rtcsync
+#allow 192.168.0.0/16
+#local stratum 10
+#authselectmode require
+ntsdumpdir /var/lib/chrony
+logdir /var/log/chrony
+pool pool.ntp.org iburst
+
+allow для сети стенда до исправления не задан.
+Конфигурация целиком и её части сохранены в PNG 16–18; секретные ключи не передавались.

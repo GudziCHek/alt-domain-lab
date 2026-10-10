@@ -1,0 +1,33 @@
+Дата: 10 октября 2026 года.
+Происхождение: переданный пользователем текст итогового сеанса и последующей
+исправленной команды тёмной темы. Начальная часть также показана на кадре
+22-pc2-e05-wallpaper-unlocked-session.png.
+Последние исправленные set/get переданы только текстом.
+
+=== Новый графический сеанс student2@LAB.TEST после снятия обеих блокировок ===
+$ hostname -f
+pc2.lab.test
+$ date '+%F %T %Z %z'
+2026-10-10 11:25:27 MSK +0300
+$ klist
+Ticket cache: KEYRING:persistent:1164001106:krb_ccache_VzrJq8W
+Default principal: student2@LAB.TEST
+
+Valid starting       Expires              Service principal
+10.10.2026 11:24:56  10.10.2026 21:24:56  krbtgt/LAB.TEST@LAB.TEST
+    renew until 17.10.2026 11:24:56
+$ gsettings writable org.gnome.desktop.background picture-uri
+true
+$ gsettings writable org.gnome.desktop.background picture-uri-dark
+true
+$ gsettings set org.gnome.desktop.background picture-uri "'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'"
+
+На промежуточном скриншоте перед командой picture-uri-dark есть «1.».
+Её строка не используется как подтверждение успешной записи. Пользователь
+позднее повторил команду без префикса и передал следующий вывод для этого узла:
+
+$ gsettings set org.gnome.desktop.background picture-uri-dark "'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'"
+$ gsettings get org.gnome.desktop.background picture-uri
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'
+$ gsettings get org.gnome.desktop.background picture-uri-dark
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'

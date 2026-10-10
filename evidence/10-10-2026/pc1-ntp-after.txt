@@ -1,0 +1,60 @@
+Дата: 10 октября 2026 года.
+Происхождение: переданный пользователем текст после исправления доступа на dc1.
+Локальная административная учётка gudzichek-pc1, затем su -.
+
+# systemctl restart chronyd
+# chronyc burst 4/4
+200 OK
+# chronyc -n sources -v
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^* 10.77.0.10                    4   6    17    33  +6651ns[ +154us] +/-   36ms
+# chronyc tracking
+Reference ID    : 0A4D000A (10.77.0.10)
+Stratum         : 5
+Ref time (UTC)  : Sat Oct 10 08:13:35 2026
+System time     : 0.000000488 seconds slow of NTP time
+Last offset     : +0.000147538 seconds
+RMS offset      : 0.000147538 seconds
+Frequency       : 13.011 ppm slow
+Residual freq   : +52.981 ppm
+Skew            : 12.527 ppm
+Root delay      : 0.056328256 seconds
+Root dispersion : 0.010250728 seconds
+Update interval : 2.0 seconds
+Leap status     : Normal
+# chronyc makestep
+200 OK
+# date '+%F %T %Z %z'
+2026-10-10 11:14:25 MSK +0300
+# timedatectl
+               Local time: Сб 2026-10-10 11:14:28 MSK
+           Universal time: Сб 2026-10-10 08:14:28 UTC
+                 RTC time: Сб 2026-10-10 08:14:06
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: no
+              NTP service: active
+          RTC in local TZ: no
+# chronyc tracking
+Reference ID    : 0A4D000A (10.77.0.10)
+Stratum         : 5
+Ref time (UTC)  : Sat Oct 10 08:13:35 2026
+System time     : 0.000000000 seconds slow of NTP time
+Last offset     : +0.000147538 seconds
+RMS offset      : 0.000147538 seconds
+Frequency       : 13.011 ppm slow
+Residual freq   : +52.981 ppm
+Skew            : 12.527 ppm
+Root delay      : 0.056328256 seconds
+Root dispersion : 0.011449249 seconds
+Update interval : 2.0 seconds
+Leap status     : Normal
+# timedatectl status
+               Local time: Сб 2026-10-10 11:14:42 MSK
+           Universal time: Сб 2026-10-10 08:14:42 UTC
+                 RTC time: Сб 2026-10-10 08:14:13
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+# exit

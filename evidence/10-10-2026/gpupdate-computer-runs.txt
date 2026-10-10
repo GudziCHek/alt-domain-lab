@@ -1,0 +1,28 @@
+Дата: 10 октября 2026 года.
+Происхождение: переданные пользователем результаты двух этапов.
+Для снятия блокировок отдельный вывод gpupdate не передан; результат этого этапа
+подтверждён пользовательскими сеансами и финальными get.
+
+=== Общий фон, блокировки сняты; pc1; локальная административная учётная запись → root ===
+# gpupdate --target Computer --force
+Apply group policies for computer.
+# echo "gpupdate exit code: $?"
+gpupdate exit code: 0
+
+=== Общий фон, блокировки сняты; pc2; локальная административная учётная запись → root ===
+# gpupdate --target Computer --force
+Apply group policies for computer.
+# echo "gpupdate exit code: $?"
+gpupdate exit code: 0
+
+=== Обе блокировки включены; pc1; локальная административная учётная запись → root ===
+# gpupdate --target Computer --force
+Apply group policies for computer.
+# echo "gpupdate exit code: $?"
+gpupdate exit code: 0
+
+=== Обе блокировки включены; pc2; локальная административная учётная запись → root ===
+# gpupdate --target Computer --force
+Apply group policies for computer.
+# echo "gpupdate exit code: $?"
+gpupdate exit code: 0

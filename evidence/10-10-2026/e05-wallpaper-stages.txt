@@ -1,0 +1,67 @@
+Дата: 10 октября 2026 года.
+Происхождение: переданный текст команд; визуальные подтверждения в кадрах 07–13.
+Приведён результат отдельно для каждого узла, а не машинный журнал.
+
+=== pc1: общий фон, блокировки сняты ===
+$ hostname -f
+pc1.lab.test
+$ gsettings get org.gnome.desktop.background picture-uri
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings get org.gnome.desktop.background picture-uri-dark
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings writable org.gnome.desktop.background picture-uri
+true
+$ gsettings writable org.gnome.desktop.background picture-uri-dark
+true
+
+=== pc2: общий фон, блокировки сняты ===
+$ hostname -f
+pc2.lab.test
+$ gsettings get org.gnome.desktop.background picture-uri
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings get org.gnome.desktop.background picture-uri-dark
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings writable org.gnome.desktop.background picture-uri
+true
+$ gsettings writable org.gnome.desktop.background picture-uri-dark
+true
+
+Наблюдение пользователя: на pc1 фон появился сразу; на pc2 потребовался перезапуск.
+До включения блокировки фон сменился на Эльбрус сразу на обоих клиентах.
+Скриншоты 09/10 показывают попытки записи и новый вид рабочего стола.
+
+=== pc1: обе блокировки включены, новый вход ===
+$ hostname -f
+pc1.lab.test
+$ gsettings get org.gnome.desktop.background picture-uri
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings get org.gnome.desktop.background picture-uri-dark
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings writable org.gnome.desktop.background picture-uri
+false
+$ gsettings writable org.gnome.desktop.background picture-uri-dark
+false
+$ gsettings set org.gnome.desktop.background picture-uri "'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'"
+Ключ недоступен для записи
+$ gsettings set org.gnome.desktop.background picture-uri-dark "'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'"
+Ключ недоступен для записи
+
+=== pc2: обе блокировки включены, новый вход ===
+$ hostname -f
+pc2.lab.test
+$ gsettings get org.gnome.desktop.background picture-uri
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings get org.gnome.desktop.background picture-uri-dark
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-staraya-ladoga.jpg'
+$ gsettings writable org.gnome.desktop.background picture-uri
+false
+$ gsettings writable org.gnome.desktop.background picture-uri-dark
+false
+$ gsettings set org.gnome.desktop.background picture-uri "'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'"
+Ключ недоступен для записи
+$ gsettings set org.gnome.desktop.background picture-uri-dark "'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'"
+Ключ недоступен для записи
+
+После обеих попыток на кадрах 12/13 остаётся Старая Ладога.
+Снятие запрета и исправленная запись тёмной темы — в pc1-e05-final-session.txt
+и pc2-e05-final-session.txt.

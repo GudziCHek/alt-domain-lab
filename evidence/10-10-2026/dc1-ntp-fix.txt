@@ -1,0 +1,37 @@
+Дата: 10 октября 2026 года.
+Происхождение: ручная расшифровка ключевых строк
+19-dc1-ntp-client-access-allowed.png после выполнения инструкции.
+Это выбранные подтверждения, не полный автоматический журнал.
+
+Изменение: allow 10.77.0.0/24 в /etc/chrony.conf.
+Перед правкой в инструкции предусмотрена копия:
+/root/chrony.conf.before-ntp-fix-2026-10-10.
+Отдельное подтверждение команды cp и кадр итогового файла не переданы.
+Действующее разрешение проверено командами accheck и доступностью NTP клиентов.
+
+# systemctl restart chronyd
+# systemctl is-active chronyd
+active
+# chronyc accheck 10.77.0.21
+208 Access allowed
+# chronyc accheck 10.77.0.22
+208 Access allowed
+# ss -lunp 'sport = :123'
+UNCONN 0 0 0.0.0.0:123 0.0.0.0:* users:(("chronyd",pid=1958,fd=6))
+# chronyc tracking
+Reference ID    : A29FC87B (time.cloudflare.com)
+Stratum         : 4
+Ref time (UTC)  : Sat Oct 10 08:12:11 2026
+System time     : 0.000006613 seconds slow of NTP time
+Last offset     : +0.015523480 seconds
+RMS offset      : 0.015523480 seconds
+Frequency       : 15.438 ppm slow
+Residual freq   : +3117.994 ppm
+Skew            : 2.296 ppm
+Root delay      : 0.105249651 seconds
+Root dispersion : 0.107996494 seconds
+Update interval : 1.5 seconds
+Leap status     : Normal
+
+Названный внешний источник был выбран Chrony в момент кадра;
+это не подтверждение ручного назначения нового единственного upstream.

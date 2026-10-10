@@ -1,0 +1,21 @@
+Дата: 10 октября 2026 года.
+Происхождение: ручная расшифровка скриншота 01-dc1-domain-baseline.png.
+Не является автоматически выгруженным журналом ВМ.
+
+$ su -
+# hostname -f
+dc1.lab.test
+# systemctl is-active samba
+active
+# samba-tool domain info 127.0.0.1
+Forest          : lab.test
+Domain          : lab.test
+Netbios domain  : LAB
+DC name         : dc1.lab.test
+DC netbios name : DC1
+Server site     : Default-First-Site-Name
+Client site     : Default-First-Site-Name
+# samba-tool computer list
+PC1$
+DC1$
+PC2$

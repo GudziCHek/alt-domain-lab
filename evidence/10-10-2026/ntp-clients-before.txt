@@ -1,0 +1,87 @@
+Дата: 10 октября 2026 года, до разрешения NTP-доступа на dc1.
+Происхождение: переданный пользователем текст команд и результатов.
+Время узлов относится к разным последовательным измерениям; оно не обозначает
+одновременный замер. Часы pc2 в этот момент неверны.
+
+=== pc1 ===
+$ hostname -f
+pc1.lab.test
+$ date '+%F %T %Z %z'
+2026-10-10 10:58:52 MSK +0300
+$ date -u '+%F %T UTC'
+2026-10-10 07:59:00 UTC
+$ timedatectl status
+               Local time: Сб 2026-10-10 10:59:06 MSK
+           Universal time: Сб 2026-10-10 07:59:06 UTC
+                 RTC time: Сб 2026-10-10 07:25:49
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: no
+              NTP service: active
+          RTC in local TZ: no
+$ systemctl list-units --all --type=service 'chrony*' '*timesync*' 'ntp*' --no-pager
+chronyd.service           loaded    active   running NTP client/server
+ntpd.service              not-found inactive dead    ntpd.service
+ntpdate.service           not-found inactive dead    ntpdate.service
+systemd-timesyncd.service not-found inactive dead    systemd-timesyncd.service
+
+Позднее переданный запрос pc1:
+$ chronyc tracking
+Reference ID    : 00000000 ()
+Stratum         : 0
+Ref time (UTC)  : Thu Jan 01 00:00:00 1970
+System time     : 0.000000005 seconds slow of NTP time
+Last offset     : +0.000000000 seconds
+RMS offset      : 0.000000000 seconds
+Frequency       : 13.045 ppm slow
+Residual freq   : +0.000 ppm
+Skew            : 0.000 ppm
+Root delay      : 1.000000000 seconds
+Root dispersion : 1.000000000 seconds
+Update interval : 0.0 seconds
+Leap status     : Not synchronised
+$ chronyc -n sources -v
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^? 10.77.0.10                    0  10     0     -     +0ns[   +0ns] +/-    0ns
+
+=== pc2 ===
+$ hostname -f
+pc2.lab.test
+$ date '+%F %T %Z %z'
+2026-10-10 10:42:02 MSK +0300
+$ date -u '+%F %T UTC'
+2026-10-10 07:42:08 UTC
+$ timedatectl status
+               Local time: Сб 2026-10-10 10:42:13 MSK
+           Universal time: Сб 2026-10-10 07:42:13 UTC
+                 RTC time: Сб 2026-10-10 07:42:11
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: no
+              NTP service: active
+          RTC in local TZ: no
+$ systemctl list-units --all --type=service 'chrony*' '*timesync*' 'ntp*' --no-pager
+chronyd.service           loaded    active   running NTP client/server
+ntpd.service              not-found inactive dead    ntpd.service
+ntpdate.service           not-found inactive dead    ntpdate.service
+systemd-timesyncd.service not-found inactive dead    systemd-timesyncd.service
+$ chronyc tracking
+Reference ID    : 00000000 ()
+Stratum         : 0
+Ref time (UTC)  : Thu Jan 01 00:00:00 1970
+System time     : 0.000000007 seconds slow of NTP time
+Last offset     : +0.000000000 seconds
+RMS offset      : 0.000000000 seconds
+Frequency       : 13.852 ppm slow
+Residual freq   : +0.000 ppm
+Skew            : 0.000 ppm
+Root delay      : 1.000000000 seconds
+Root dispersion : 1.000000000 seconds
+Update interval : 0.0 seconds
+Leap status     : Not synchronised
+$ chronyc sources -v
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^? 10.77.0.10                    0   9     0     -     +0ns[   +0ns] +/-    0ns
+
+Длинная легенда sources и пояснения systemctl опущены при оформлении.
+Пользователь сообщил в момент передачи этого блока реальное время 11:02:10.

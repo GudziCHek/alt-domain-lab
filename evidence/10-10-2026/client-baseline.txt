@@ -1,0 +1,119 @@
+Дата: 10 октября 2026 года, до изменения фона в E05.
+Происхождение: переданный пользователем текст команд и результатов.
+Текст сгруппирован по узлам, команды чтения повторяются только при необходимости.
+Новые сеансы также показаны на кадрах 02 и 03.
+
+=== pc1: локальная административная учётная запись ===
+$ hostname -f
+pc1.lab.test
+$ systemctl is-active sssd
+active
+$ host -t SRV _ldap._tcp.lab.test 10.77.0.10
+Using domain server:
+Name: 10.77.0.10
+Address: 10.77.0.10#53
+Aliases:
+_ldap._tcp.lab.test has SRV record 0 100 389 dc1.lab.test.
+$ getent passwd student2@lab.test
+student2:*:1164001106:1164000513:student2:/home/LAB.TEST/student2:/bin/bash
+$ id student2@lab.test
+uid=1164001106(student2) gid=1164000513(domain users) группы=1164000513(domain users),1164001107(lab-students),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+$ rpm -q admc gpui gpupdate admx-basealt
+admc-0.24.0-alt1.x86_64
+gpui-0.2.55-alt1.x86_64
+gpupdate-0.16.1-alt1.noarch
+admx-basealt-0.8.0-alt1.noarch
+$ command -v gpui-main
+/usr/bin/gpui-main
+
+=== pc1: root ===
+# gpupdate-setup status
+enabled
+# gpupdate-setup active-policy
+workstation
+# gpupdate-setup active-backend
+samba
+# control system-policy
+gpupdate
+
+=== pc2: локальная административная учётная запись ===
+$ hostname -f
+pc2.lab.test
+$ systemctl is-active sssd
+active
+$ host -t SRV _ldap._tcp.lab.test 10.77.0.10
+Using domain server:
+Name: 10.77.0.10
+Address: 10.77.0.10#53
+Aliases:
+_ldap._tcp.lab.test has SRV record 0 100 389 dc1.lab.test.
+$ getent passwd student2@lab.test
+student2@LAB.TEST:*:1164001106:1164000513:student2:/home/LAB.TEST/student2:/bin/bash
+$ id student2@lab.test
+uid=1164001106(student2@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),1164001107(lab-students@LAB.TEST),100(users),36(vmusers),949(usershares),80(cdwriter),22(cdrom),81(audio),995(video),19(proc),83(radio),980(camera),71(floppy),962(xgrp),963(scanner),14(uucp),971(fuse),959(vboxadd),958(vboxsf)
+$ rpm -q gpupdate
+gpupdate-0.16.1-alt1.noarch
+
+=== pc2: root ===
+# gpupdate-setup status
+enabled
+# gpupdate-setup active-policy
+workstation
+# gpupdate-setup active-backend
+samba
+# control system-policy
+gpupdate
+
+=== Новый графический сеанс student2 на pc1 ===
+$ hostname -f
+pc1.lab.test
+$ id
+uid=1164001106(student2) gid=1164000513(domain users) группы=1164000513(domain users),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video),1164001107(lab-students)
+$ echo "$HOME"
+/home/LAB.TEST/student2
+$ gsettings get org.gnome.desktop.background picture-uri
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'
+$ gsettings get org.gnome.desktop.background picture-uri-dark
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'
+$ gsettings writable org.gnome.desktop.background picture-uri
+true
+$ gsettings writable org.gnome.desktop.background picture-uri-dark
+true
+
+=== Новый графический сеанс student2 на pc2 после изменения имён в E09 ===
+$ hostname -f
+pc2.lab.test
+$ id
+uid=1164001106(student2@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video),1164001107(lab-students@LAB.TEST)
+$ echo "$HOME"
+/home/LAB.TEST/student2
+$ gsettings get org.gnome.desktop.background picture-uri
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'
+$ gsettings get org.gnome.desktop.background picture-uri-dark
+'file:///usr/share/backgrounds/alt-gnome-desktop/alt-elbrus.jpg'
+$ gsettings writable org.gnome.desktop.background picture-uri
+true
+$ gsettings writable org.gnome.desktop.background picture-uri-dark
+true
+
+=== Список штатных обоев: одинаковый вывод pc1 и pc2 ===
+$ ls -1 /usr/share/backgrounds/alt-gnome-desktop
+alt-elbrus.jpg
+alt-gold-elbrus.jxl
+alt-gold.jxl
+alt-helix-d.jxl
+alt-helix-l.jxl
+alt-iron-d.jxl
+alt-iron-elbrus.jxl
+alt-iron-l.jxl
+alt-paint.jxl
+alt-pod-zvezdami.jpg
+alt-staraya-ladoga.jpg
+alt-tantsy-na-kamnyah.jpg
+alt-utrenniy-piterburg.jpg
+alt-wave-1-d.jxl
+alt-wave-1-l.jxl
+alt-wave-2-d.jxl
+alt-wave-2-l.jxl
+alt-wave-3-d.jxl
+alt-wave-3-l.jxl
