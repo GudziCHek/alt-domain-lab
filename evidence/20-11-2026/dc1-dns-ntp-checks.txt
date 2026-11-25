@@ -1,0 +1,85 @@
+dc1.lab.test — возобновление работы 20 ноября 2026
+Выбранные строки со скриншотов 01–05 и сообщения пользователя о запуске.
+Часы на первом этапе показывали октябрьскую дату; это время гостя, а не дата записи в журнал проекта.
+
+До исправления
+
+date '+%F %T %Z %z'
+2026-10-13 22:02:44 MSK +0300
+
+systemctl is-active samba chronyd
+active
+active
+
+testparm -s --parameter-name='dns forwarder'
+Load smb config files from /etc/samba/smb.conf
+Loaded services file OK.
+172.17.2.11
+
+host -W 2 -R 1 -t SRV _ldap._tcp.lab.test. 127.0.0.1
+_ldap._tcp.lab.test has SRV record 0 100 389 dc1.lab.test.
+
+host -W 2 -R 1 -t A pool.ntp.org. 127.0.0.1
+;; communications error to 127.0.0.1#53: timed out
+;; no servers could be reached
+
+chronyc -n sources -a
+Восемь записей ^? с идентификаторами ID#..., для всех Reach=0.
+chronyc tracking
+Reference ID    : 00000000 ()
+Stratum         : 0
+Leap status     : Not synchronised
+
+host -W 2 -R 1 -t A pool.ntp.org. 172.17.2.11
+;; communications error to 172.17.2.11#53: timed out
+;; no servers could be reached
+
+host -W 2 -R 1 -t A pool.ntp.org. 1.1.1.1
+pool.ntp.org has address 87.249.44.53
+pool.ntp.org has address 92.255.126.17
+pool.ntp.org has address 89.223.121.214
+pool.ntp.org has address 91.206.16.3
+
+Во время systemctl reboot Windows показала диалог VirtualBoxVM.exe с ошибкой
+записи в память; пользователь сообщил статус ВМ «Прервана». dc1 загрузилась
+после обычной команды «Запустить». Сохранён скрин диалога, журнал VBox.log
+не сохранили. Точная причина аварии не установлена.
+
+После запуска
+
+date '+%F %T %Z %z'
+2026-11-20 21:38:16 MSK +0300
+
+systemctl is-active samba chronyd
+active
+active
+
+testparm -s --parameter-name='dns forwarder'
+Load smb config files from /etc/samba/smb.conf
+Loaded services file OK.
+1.1.1.1
+
+host -W 2 -R 1 -t SRV _ldap._tcp.lab.test. 127.0.0.1
+_ldap._tcp.lab.test has SRV record 0 100 389 dc1.lab.test.
+
+host -W 2 -R 1 -t A pool.ntp.org. 127.0.0.1
+pool.ntp.org has address 109.195.84.246
+pool.ntp.org has address 83.237.235.30
+pool.ntp.org has address 82.142.168.18
+pool.ntp.org has address 87.103.245.205
+
+chronyc -n sources
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+^* 92.255.126.1                   2    6    37     50   -132us[-274us] +/- 8877us
+
+chronyc tracking
+Reference ID    : 5CFF7E01
+Stratum         : 3
+Ref time (UTC)  : Fri Nov 20 18:39:12 2026
+System time     : 0.000150004 seconds slow of NTP time
+Leap status     : Normal
+
+Состояние 20 ноября: внешние имена через Samba разрешаются, доменная
+SRV-запись сохранена, Chrony выбрал внешний источник. Набор IP у DNS-пула
+может меняться. Копия smb.conf перед изменением была предусмотрена в
+инструкции; отдельного вывода её создания не передано.

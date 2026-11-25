@@ -1,0 +1,23 @@
+25 ноября 2026 года, перед E03. Вывод pc1, присланный текстом.
+Две строки active относятся к SSSD и Chrony.
+
+pc1.lab.test
+active
+active
+               Local time: Ср 2026-11-25 21:25:54 MSK
+           Universal time: Ср 2026-11-25 18:25:54 UTC
+                 RTC time: Ср 2026-11-25 18:25:36
+                Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: yes
+              NTP service: active
+          RTC in local TZ: no
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+===============================================================================
+^* 10.77.0.10                    4   6    17    47  +1270ns[  +13us] +/-   23ms
+Using domain server:
+Name: 10.77.0.10
+Address: 10.77.0.10#53
+Aliases:
+
+_kerberos._tcp.lab.test has SRV record 0 100 88 dc1.lab.test.
+student2:*:1164001106:1164000513:student2:/home/LAB.TEST/student2:/bin/bash

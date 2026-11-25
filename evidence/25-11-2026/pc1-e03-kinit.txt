@@ -1,0 +1,30 @@
+25 ноября 2026 года. Команды и выводы с pc1, присланные текстом.
+Ниже четыре отдельных запроса начального билета; значения паролей не сохранены.
+
+=== Исходная проверка после сброса на пароль из 7 символов ===
+$ kinit -c MEMORY:e03-baseline e03test@LAB.TEST
+Password for e03test@LAB.TEST:
+Warning: Your password will expire in 41 days on Ср 06 янв 2027 21:35:31
+$ echo "kinit exit code: $?"
+kinit exit code: 0
+
+=== После назначения E03-Min12, до сброса, действующий пароль из 7 символов ===
+$ kinit -c MEMORY:e03-after-policy e03test@LAB.TEST
+Password for e03test@LAB.TEST:
+Warning: Your password will expire in 41 days on Ср 06 янв 2027 21:35:31
+$ echo "kinit exit code: $?"
+kinit exit code: 0
+
+=== После успешного сброса, новый пароль из 12 символов ===
+$ kinit -c MEMORY:e03-after-policy e03test@LAB.TEST
+Password for e03test@LAB.TEST:
+Warning: Your password will expire in 41 days on Ср 06 янв 2027 21:47:14
+$ echo "kinit exit code: $?"
+kinit exit code: 0
+
+=== После удаления E03-Min12, новый пароль из 12 символов ===
+$ kinit -c MEMORY:e03-final e03test@LAB.TEST
+Password for e03test@LAB.TEST:
+Warning: Your password will expire in 41 days on Ср 06 янв 2027 21:47:14
+$ echo "kinit exit code: $?"
+kinit exit code: 0

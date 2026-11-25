@@ -1,0 +1,66 @@
+E04, 24 ноября 2026 года. Время — MSK (UTC+3).
+Исходные и итоговые выводы присланы текстом. Для проверки старого
+сеанса отдельно выписаны ключевые строки из снимков pc2.
+
+=== До отключения: новый вход pc1 ===
+pc1.lab.test
+2026-11-24 23:36:42 MSK +0300
+uid=1164001109(e04test) gid=1164000513(domain users) группы=1164000513(domain users),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video)
+session=
+Ticket cache: KEYRING:persistent:1164001109:krb_ccache_cYhCP8E
+Default principal: e04test@LAB.TEST
+
+Valid starting       Expires              Service principal
+24.11.2026 23:36:02  25.11.2026 09:36:02  krbtgt/LAB.TEST@LAB.TEST
+        renew until 01.12.2026 23:36:02
+
+=== До отключения: новый вход pc2 ===
+pc2.lab.test
+2026-11-24 23:38:44 MSK +0300
+uid=1164001109(e04test@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video)
+session=
+Ticket cache: KEYRING:persistent:1164001109:krb_ccache_ZAbZQNq
+Default principal: e04test@LAB.TEST
+
+Valid starting       Expires              Service principal
+24.11.2026 23:37:44  25.11.2026 09:37:44  krbtgt/LAB.TEST@LAB.TEST
+        renew until 01.12.2026 23:37:44
+
+На кадре до отключения (04-pc2-e04-session-before-disable.png):
+$ printf 'shell_pid=%s\n' "$$"
+shell_pid=4827
+
+=== Во время отключения: открытый ранее сеанс pc2 ===
+Фрагмент снимка 08-pc2-e04-original-session-after-disable.png:
+pc2.lab.test
+2026-11-24 23:45:18 MSK +0300
+shell_pid=4827
+uid=1164001109(e04test@LAB.TEST) gid=1164000513(domain users@LAB.TEST) [остальные группы опущены]
+Ticket cache: KEYRING:persistent:1164001109:krb_ccache_ZAbZQNq
+Default principal: e04test@LAB.TEST
+
+Valid starting       Expires              Service principal
+24.11.2026 23:37:44  25.11.2026 09:37:44  krbtgt/LAB.TEST@LAB.TEST
+        renew until 01.12.2026 23:37:44
+
+=== После включения: новый вход pc1 ===
+pc1.lab.test
+2026-11-24 23:53:39 MSK +0300
+uid=1164001109(e04test) gid=1164000513(domain users) группы=1164000513(domain users),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video)
+Ticket cache: KEYRING:persistent:1164001109:krb_ccache_cYhCP8E
+Default principal: e04test@LAB.TEST
+
+Valid starting       Expires              Service principal
+24.11.2026 23:53:02  25.11.2026 09:53:02  krbtgt/LAB.TEST@LAB.TEST
+        renew until 01.12.2026 23:53:02
+
+=== После включения: новый вход pc2 ===
+pc2.lab.test
+2026-11-24 23:54:46 MSK +0300
+uid=1164001109(e04test@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video)
+Ticket cache: KEYRING:persistent:1164001109:krb_ccache_ZAbZQNq
+Default principal: e04test@LAB.TEST
+
+Valid starting       Expires              Service principal
+24.11.2026 23:54:11  25.11.2026 09:54:11  krbtgt/LAB.TEST@LAB.TEST
+        renew until 01.12.2026 23:54:11

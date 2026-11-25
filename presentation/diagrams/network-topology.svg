@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="34cm" height="22cm" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs/>
+  <g id="Background"/>
+  <g id="Рамки">
+    <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.02; stroke-linejoin: round; stroke: #ffffff" x="0" y="0" width="680" height="440" rx="2.4" ry="2.4"/>
+    <rect style="fill: #f8fafc; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #a8b6c3" x="20" y="65" width="640" height="315" rx="2.4" ry="2.4"/>
+    <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.7; stroke-linejoin: round; stroke-dasharray: 4; stroke: #a8b6c3" x="32" y="92" width="616" height="276" rx="2.4" ry="2.4"/>
+  </g>
+  <g id="Связи">
+    <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #56697a" x1="418" y1="151.5" x2="508" y2="151.5"/>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #56697a" x1="580" y1="120.95" x2="580" y2="63.05"/>
+      <polygon style="fill: #56697a; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #56697a" fill-rule="evenodd" points="578,120.95 580,125.55 582,120.95 "/>
+      <polygon style="fill: #56697a; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #56697a" fill-rule="evenodd" points="582,63.05 580,58.45 578,63.05 "/>
+    </g>
+    <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="231.5" y1="177" x2="231.5" y2="192"/>
+    <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="135" y1="192" x2="535" y2="192"/>
+    <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="135" y1="192" x2="135" y2="208"/>
+    <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="335" y1="192" x2="335" y2="208"/>
+    <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="535" y1="192" x2="535" y2="208"/>
+  </g>
+  <g id="Узлы">
+    <g>
+      <rect style="fill: #f1f5f9; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #56697a" x="508" y="13" width="144" height="45" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="516" y="30">
+        <tspan x="516" y="30">Внешняя сеть</tspan>
+      </text>
+      <text font-size="6.24" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="516" y="45">
+        <tspan x="516" y="45">Интернет / источники NTP</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #edf5fc; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="45" y="126" width="373" height="51" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="53" y="143">
+        <tspan x="53" y="143">NAT Network «ad-lab» • 10.77.0.0/24</tspan>
+      </text>
+      <text font-size="7.52" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="53" y="158">
+        <tspan x="53" y="158">Статические адреса; DHCP выключен</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #f1f5f9; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #56697a" x="508" y="126" width="144" height="51" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="516" y="143">
+        <tspan x="516" y="143">Шлюз NAT</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="516" y="158">
+        <tspan x="516" y="158">10.77.0.1</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="516" y="171">
+        <tspan x="516" y="171">Виртуальный шлюз</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #edf8f5; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #16766d" x="45" y="208" width="180" height="117" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #16766d; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="53" y="225">
+        <tspan x="53" y="225">dc1.lab.test</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="53" y="240">
+        <tspan x="53" y="240">ALT Server 11.1 «Альт Домен»</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="53" y="253">
+        <tspan x="53" y="253">10.77.0.10/24</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="53" y="266">
+        <tspan x="53" y="266">Samba AD • LDAP • Kerberos KDC</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="53" y="279">
+        <tspan x="53" y="279">DNS домена • NTP (chrony)</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="53" y="292">
+        <tspan x="53" y="292">4 ГБ RAM • 2 vCPU • диск 40 ГБ</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #edf5fc; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="245" y="208" width="180" height="117" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="253" y="225">
+        <tspan x="253" y="225">pc1.lab.test</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="253" y="240">
+        <tspan x="253" y="240">ALT Workstation 11.2 • GNOME</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="253" y="253">
+        <tspan x="253" y="253">10.77.0.21/24</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="253" y="266">
+        <tspan x="253" y="266">SSSD • gpupdate</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="253" y="279">
+        <tspan x="253" y="279">ADMC + GPUI: управление доменом</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="253" y="292">
+        <tspan x="253" y="292">3 ГБ RAM • 2 vCPU • диск 40 ГБ</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #edf5fc; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="445" y="208" width="180" height="117" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="453" y="225">
+        <tspan x="453" y="225">pc2.lab.test</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="453" y="240">
+        <tspan x="453" y="240">ALT Workstation 11.2 • GNOME</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="453" y="253">
+        <tspan x="453" y="253">10.77.0.22/24</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="453" y="266">
+        <tspan x="453" y="266">SSSD • gpupdate • опыт E09</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="453" y="279">
+        <tspan x="453" y="279">Полные доменные имена включены</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="453" y="292">
+        <tspan x="453" y="292">3 ГБ RAM • 2 vCPU • диск 40 ГБ</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="Подписи">
+    <text font-size="13.76" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="20" y="27">
+      <tspan x="20" y="27">Сеть стенда alt-domain-lab</tspan>
+    </text>
+    <text font-size="6.72" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="20" y="43">
+      <tspan x="20" y="43">Состояние на 10.10.2026 • три ВМ на одном физическом ПК</tspan>
+    </text>
+    <text font-size="8.8" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="34" y="83">
+      <tspan x="34" y="83">Физический ПК • Windows 11 Home</tspan>
+    </text>
+    <text font-size="8" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="45" y="109">
+      <tspan x="45" y="109">VirtualBox 7.2.16</tspan>
+    </text>
+    <text font-size="6.08" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="462" y="147">
+      <tspan x="462" y="147">NAT</tspan>
+    </text>
+    <text font-size="5.12" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="589" y="79">
+      <tspan x="589" y="79">Выход наружу</tspan>
+    </text>
+    <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="45" y="343">
+      <tspan x="45" y="343">DNS и NTP клиентов → 10.77.0.10 (dc1); шлюз всех ВМ → 10.77.0.1.</tspan>
+    </text>
+    <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="45" y="359">
+      <tspan x="45" y="359">Домен: lab.test • realm Kerberos: LAB.TEST • NetBIOS: LAB</tspan>
+    </text>
+    <text font-size="6.56" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="20" y="400">
+      <tspan x="20" y="400">Основные службы: DNS 53 • Kerberos 88 • LDAP 389 • SMB 445 • NTP 123.</tspan>
+    </text>
+    <text font-size="6.24" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="20" y="415">
+      <tspan x="20" y="415">10.77.0.1 — шлюз NAT, а не IP физического ПК. Домашние каталоги находятся на клиентах.</tspan>
+    </text>
+  </g>
+</svg>

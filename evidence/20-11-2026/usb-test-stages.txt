@@ -1,0 +1,78 @@
+20 ноября 2026 — E05, одно USB-устройство, два клиента, три состояния
+На каждом этапе: hostname -f и lsblk -o NAME,TRAN,SIZE,FSTYPE,LABEL,MOUNTPOINTS.
+Выводы переданы пользователем, пробелы в столбцах приведены к одинаковому виду.
+
+До включения запрета — pc1
+
+pc1.lab.test
+NAME   TRAN    SIZE FSTYPE LABEL MOUNTPOINTS
+sda    sata     40G
+├─sda1         5,8G swap         [SWAP]
+└─sda2        34,2G ext4         /
+sdb    usb    58,6G
+└─sdb1        58,6G exfat        /run/media/student2/76E8-CACF
+sr0    ata    1024M
+
+До включения запрета — pc2
+
+pc2.lab.test
+NAME   TRAN    SIZE FSTYPE LABEL MOUNTPOINTS
+sda    sata     40G
+├─sda1         5,8G swap         [SWAP]
+└─sda2        34,2G ext4         /
+sdb    usb    58,6G
+└─sdb1        58,6G exfat        /run/media/student2@LAB.TEST/76E8-CACF
+sr0    ata    1024M
+
+Запрет включён — pc1
+
+pc1.lab.test
+NAME   TRAN    SIZE FSTYPE LABEL MOUNTPOINTS
+sda    sata     40G
+├─sda1         5,8G swap         [SWAP]
+└─sda2        34,2G ext4         /
+sdb    usb    58,6G
+└─sdb1        58,6G exfat        
+sr0    ata    1024M
+[student2@pc1 ~]$ udisksctl mount -b /dev/sdb1
+Error mounting /dev/sdb1: GDBus.Error:org.freedesktop.UDisks2.Error.NotAuthorized: Not authorized to perform operation
+
+Запрет включён — pc2
+
+pc2.lab.test
+NAME   TRAN    SIZE FSTYPE LABEL MOUNTPOINTS
+sda    sata     40G
+├─sda1         5,8G swap         [SWAP]
+└─sda2        34,2G ext4         /
+sdb    usb    58,6G
+└─sdb1        58,6G exfat        
+sr0    ata    1024M
+[student2@LAB.TEST@pc2 ~]$ udisksctl mount -b /dev/sdb1
+Error mounting /dev/sdb1: GDBus.Error:org.freedesktop.UDisks2.Error.NotAuthorized: Not authorized to perform operation
+
+Запрет отключён — pc1
+
+pc1.lab.test
+NAME   TRAN    SIZE FSTYPE LABEL MOUNTPOINTS
+sda    sata     40G
+├─sda1         5,8G swap         [SWAP]
+└─sda2        34,2G ext4         /
+sdb    usb    58,6G
+└─sdb1        58,6G exfat        /run/media/student2/76E8-CACF
+sr0    ata    1024M
+
+Запрет отключён — pc2
+
+pc2.lab.test
+NAME   TRAN    SIZE FSTYPE LABEL MOUNTPOINTS
+sda    sata     40G
+├─sda1         5,8G swap         [SWAP]
+└─sda2        34,2G ext4         /
+sdb    usb    58,6G
+└─sdb1        58,6G exfat        /run/media/student2@LAB.TEST/76E8-CACF
+sr0    ata    1024M
+
+Проверки в GNOME «Файлы»: до запрета на pc1 видны содержимое тома и ещё пустой
+тестовый файл; на pc2 открыт e05-test.txt со строкой E05 USB test.
+При запрете на обоих клиентах графическая попытка тоже отклонена.
+После отключения запрета на обоих открыт e05-test.txt с той же строкой.

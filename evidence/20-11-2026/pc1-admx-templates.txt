@@ -1,0 +1,14 @@
+20 ноября 2026 — наличие шаблона Microsoft на рабочем месте редактирования GPUI
+
+На pc1 выполнена команда:
+find /usr/share/PolicyDefinitions -iname 'RemovableStorage.admx' -o -iname 'RemovableStorage.adml'
+
+Выбранные строки:
+/usr/share/PolicyDefinitions/RemovableStorage.admx
+/usr/share/PolicyDefinitions/en-US/RemovableStorage.adml
+/usr/share/PolicyDefinitions/ru-ru/RemovableStorage.adml
+
+В исходном выводе также присутствуют ресурсы других локализаций. После
+проверки пользователь нашёл параметр и включил запрет (кадр 13).
+Новая установка шаблонов и причина, по которой нужная ветка сначала не
+отображалась в кадре, отдельными выводами не подтверждены.

@@ -1,0 +1,70 @@
+20 ноября 2026 — выбор источника времени и новые графические входы student2
+Фрагменты выводов пользователя. Команды проверки входа выполнялись в
+пользовательских сеансах. Учётные данные в материалах отсутствуют.
+
+pc1 — hostname -f; timedatectl status; systemctl is-active sssd chronyd;
+      chronyc -n sources; chronyc tracking
+
+pc1.lab.test
+Local time: Пт 2026-11-20 21:45:00 MSK
+Universal time: Пт 2026-11-20 18:45:00 UTC
+RTC time: Пт 2026-11-20 18:45:00
+Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: yes
+NTP service: active
+RTC in local TZ: no
+active
+active
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+^* 10.77.0.10                    3   6    37    45  +6774ns[+1351us] +/-   11ms
+Reference ID    : 0A4D000A (10.77.0.10)
+Stratum         : 4
+Ref time (UTC)  : Fri Nov 20 18:44:15 2026
+System time     : 0.000001335 seconds slow of NTP time
+Last offset     : +0.001344226 seconds
+Leap status     : Normal
+
+pc2 — тот же блок команд
+
+pc2.lab.test
+Local time: Пт 2026-11-20 21:46:13 MSK
+Universal time: Пт 2026-11-20 18:46:13 UTC
+RTC time: Пт 2026-11-20 18:46:11
+Time zone: Europe/Moscow (MSK, +0300)
+System clock synchronized: yes
+NTP service: active
+RTC in local TZ: no
+active
+active
+MS Name/IP address         Stratum Poll Reach LastRx Last sample
+^* 10.77.0.10                    3   6    37     7  -5586ns[ -876us] +/-   12ms
+Reference ID    : 0A4D000A (10.77.0.10)
+Stratum         : 4
+Ref time (UTC)  : Fri Nov 20 18:46:06 2026
+System time     : 0.000489380 seconds slow of NTP time
+Last offset     : -0.000870017 seconds
+Leap status     : Normal
+
+Первоначальный вход: пользователь сообщил об истечении срока пароля и
+неудачной смене через экран входа. Был предложен административный сброс
+одной записи на dc1 (samba-tool user setpassword student2, интерактивно).
+Вывод команды сброса не приложен. Подтверждение результата — новые сеансы
+и свежие TGT ниже. Проверка доменных парольных требований не проводилась.
+
+pc1 — hostname -f; id; klist
+pc1.lab.test
+uid=1164001106(student2) gid=1164000513(domain users) группы=1164000513(domain users),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video),1164001107(lab-students)
+Ticket cache: KEYRING:persistent:1164001106:krb_ccache_eFp7J6X
+Default principal: student2@LAB.TEST
+Valid starting       Expires              Service principal
+20.11.2026 21:51:33  21.11.2026 07:51:33  krbtgt/LAB.TEST@LAB.TEST
+        renew until 27.11.2026 21:51:33
+
+pc2 — hostname -f; id; klist
+pc2.lab.test
+uid=1164001106(student2@LAB.TEST) gid=1164000513(domain users@LAB.TEST) группы=1164000513(domain users@LAB.TEST),14(uucp),19(proc),22(cdrom),36(vmusers),71(floppy),80(cdwriter),81(audio),83(radio),100(users),949(usershares),958(vboxsf),959(vboxadd),962(xgrp),963(scanner),971(fuse),980(camera),995(video),1164001107(lab-students@LAB.TEST)
+Ticket cache: KEYRING:persistent:1164001106:krb_ccache_LvlldX5
+Default principal: student2@LAB.TEST
+Valid starting       Expires              Service principal
+20.11.2026 21:53:19  21.11.2026 07:53:19  krbtgt/LAB.TEST@LAB.TEST
+        renew until 27.11.2026 21:53:19

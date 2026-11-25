@@ -1,0 +1,28 @@
+20 ноября 2026 — E05 со съёмным носителем, обновление компьютерных политик
+Фрагменты из сообщений пользователя; все четыре запуска выполнялись от root.
+
+Запрет включён — pc1
+# gpupdate --target Computer --force
+Apply group policies for computer.
+# echo "gpupdate exit code: $?"
+gpupdate exit code: 0
+
+Запрет включён — pc2
+# gpupdate --target Computer --force
+Apply group policies for computer.
+# echo "gpupdate exit code: $?"
+gpupdate exit code: 0
+
+Запрет отключён — pc1
+# gpupdate --target Computer --force
+Apply group policies for computer.
+gpupdate exit code: 0
+
+Запрет отключён — pc2
+# gpupdate --target Computer --force
+Apply group policies for computer.
+gpupdate exit code: 0
+
+На последнем этапе пользователь передал команду и echo как один блок.
+Код 0 — успешное завершение gpupdate; итог каждой стадии подтверждён
+отдельной проверкой под student2.

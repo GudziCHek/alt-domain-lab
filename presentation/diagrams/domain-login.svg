@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="38cm" height="30cm" viewBox="0 0 760 586" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs/>
+  <g id="Background"/>
+  <g id="Рамки">
+    <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.02; stroke-linejoin: round; stroke: #ffffff" x="0" y="0" width="760" height="586" rx="2.4" ry="2.4"/>
+    <rect style="fill: #f8fbff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="20" y="60" width="460" height="485" rx="2.4" ry="2.4"/>
+    <rect style="fill: #f1faf7; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #16766d" x="500" y="60" width="240" height="485" rx="2.4" ry="2.4"/>
+    <rect style="fill: #edf5fc; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.7; stroke-linejoin: round; stroke: #2867a0" x="260" y="172" width="180" height="268" rx="2.4" ry="2.4"/>
+  </g>
+  <g id="Связи">
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="240" y1="146" x2="240" y2="167"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" d="M 240,167 A 1,1 0 0 1 239,168"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="239" y1="168" x2="125" y2="168"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" d="M 125,168 A 1,1 0 0 0 124,169"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="124" y1="169" x2="124" y2="182.95"/>
+      <polygon style="fill: #2867a0; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" fill-rule="evenodd" points="122,182.95 124,187.55 126,182.95 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="40" y1="146" x2="31" y2="146"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" d="M 31,146 A 1,1 0 0 0 30,147"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="30" y1="147" x2="30" y2="311"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" d="M 30,311 A 1,1 0 0 0 31,312"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="31" y1="312" x2="34.95" y2="312"/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="34.95,314 39.55,312 34.95,310 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="213.02" y1="216.049" x2="266.98" y2="221.951"/>
+      <polygon style="fill: #2867a0; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" fill-rule="evenodd" points="213.238,214.061 208.447,215.549 212.803,218.037 "/>
+      <polygon style="fill: #2867a0; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" fill-rule="evenodd" points="266.762,223.939 271.553,222.451 267.197,219.963 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="213.05" y1="262" x2="222" y2="262"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" d="M 222,262 A 1,1 0 0 1 223,263"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="223" y1="263" x2="223" y2="289.5"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" d="M 223,289.5 A 1,1 0 0 0 224,290.5"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="224" y1="290.5" x2="266.95" y2="290.5"/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="213.05,260 208.45,262 213.05,264 "/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="266.95,292.5 271.55,290.5 266.95,288.5 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="213.05" y1="312" x2="233" y2="312"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" d="M 233,312 A 1,1 0 0 1 234,313"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="234" y1="313" x2="234" y2="357.5"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" d="M 234,357.5 A 1,1 0 0 0 235,358.5"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="235" y1="358.5" x2="266.95" y2="358.5"/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="213.05,310 208.45,312 213.05,314 "/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="266.95,360.5 271.55,358.5 266.95,356.5 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="433.05" y1="222.5" x2="514.95" y2="222.5"/>
+      <polygon style="fill: #2867a0; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" fill-rule="evenodd" points="433.05,220.5 428.45,222.5 433.05,224.5 "/>
+      <polygon style="fill: #2867a0; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" fill-rule="evenodd" points="514.95,224.5 519.55,222.5 514.95,220.5 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="433.05" y1="290.5" x2="514.95" y2="290.5"/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="433.05,288.5 428.45,290.5 433.05,292.5 "/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="514.95,292.5 519.55,290.5 514.95,288.5 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" x1="433.05" y1="358.5" x2="514.95" y2="358.5"/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="433.05,356.5 428.45,358.5 433.05,360.5 "/>
+      <polygon style="fill: #a65c16; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #a65c16" fill-rule="evenodd" points="514.95,360.5 519.55,358.5 514.95,356.5 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.6; stroke-dasharray: 3.6; stroke: #56697a" x1="444.9" y1="172" x2="464" y2="172"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.6; stroke-dasharray: 3.6; stroke: #56697a" d="M 464,172 A 1,1 0 0 0 465,171"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.6; stroke-dasharray: 3.6; stroke: #56697a" x1="465" y1="171" x2="465" y2="124"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.6; stroke-dasharray: 3.6; stroke: #56697a" d="M 465,124 A 1,1 0 0 1 466,123"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.6; stroke-dasharray: 3.6; stroke: #56697a" x1="466" y1="123" x2="515.1" y2="123"/>
+      <polygon style="fill: #56697a; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.6; stroke: #56697a" fill-rule="evenodd" points="444.9,170 440.3,172 444.9,174 "/>
+      <polygon style="fill: #56697a; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.6; stroke: #56697a" fill-rule="evenodd" points="515.1,125 519.7,123 515.1,121 "/>
+    </g>
+    <g>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="124" y1="362" x2="124" y2="446"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" d="M 124,446 A 1,1 0 0 0 125,447"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="125" y1="447" x2="239" y2="447"/>
+      <path style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" d="M 239,447 A 1,1 0 0 1 240,448"/>
+      <line style="fill: none; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" x1="240" y1="448" x2="240" y2="456.95"/>
+      <polygon style="fill: #2867a0; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.9; stroke: #2867a0" fill-rule="evenodd" points="238,456.95 240,461.55 242,456.95 "/>
+    </g>
+  </g>
+  <g id="Узлы">
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="40" y="100" width="400" height="46" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="48" y="117">
+        <tspan x="48" y="117">1. GDM — окно входа на pc2</tspan>
+      </text>
+      <text font-size="7.52" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="132">
+        <tspan x="48" y="132">Пользователь вводит e09same@lab.test и доменный пароль</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #16766d" x="520" y="100" width="200" height="46" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #16766d; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="528" y="117">
+        <tspan x="528" y="117">DNS домена lab.test</tspan>
+      </text>
+      <text font-size="7.04" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="132">
+        <tspan x="528" y="132">DNS/SRV: найти службы dc1</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="40" y="188" width="168" height="55" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="48" y="205">
+        <tspan x="48" y="205">2. NSS — учётка</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="220">
+        <tspan x="48" y="220">passwd: files sss</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="233">
+        <tspan x="48" y="233">Ответ: имя, UID/GID, HOME</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #fff9f1; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #a65c16" x="40" y="262" width="168" height="100" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #a65c16; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="48" y="279">
+        <tspan x="48" y="279">3. PAM — вход</tspan>
+      </text>
+      <text font-size="6.56" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="294">
+        <tspan x="48" y="294">gdm-password → common-login</tspan>
+      </text>
+      <text font-size="6.56" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="307">
+        <tspan x="48" y="307">→ system-auth</tspan>
+      </text>
+      <text font-size="6.56" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="320">
+        <tspan x="48" y="320">Домен: pam_sss</tspan>
+      </text>
+      <text font-size="6.56" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="333">
+        <tspan x="48" y="333">Локальная запись: pam_tcb</tspan>
+      </text>
+      <text font-size="6.56" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="346">
+        <tspan x="48" y="346">Пароль и разрешение входа</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="272" y="196" width="156" height="53" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="280" y="213">
+        <tspan x="280" y="213">id_provider = ad</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="280" y="228">
+        <tspan x="280" y="228">Учётка и группы</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="280" y="241">
+        <tspan x="280" y="241">Из кеша или LDAP</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #a65c16" x="272" y="264" width="156" height="53" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #a65c16; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="280" y="281">
+        <tspan x="280" y="281">auth_provider = ad</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="280" y="296">
+        <tspan x="280" y="296">Проверка через Kerberos</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="280" y="309">
+        <tspan x="280" y="309">Ответ: успех / отказ</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #a65c16" x="272" y="332" width="156" height="53" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #a65c16; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="280" y="349">
+        <tspan x="280" y="349">access_provider=ad</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="280" y="364">
+        <tspan x="280" y="364">Проверка права входа</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="280" y="377">
+        <tspan x="280" y="377">По доменным данным</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #56697a" x="272" y="399" width="156" height="35" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="280" y="416">
+        <tspan x="280" y="416">Кеш учёток на pc2</tspan>
+      </text>
+      <text font-size="6.72" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="280" y="431">
+        <tspan x="280" y="431">/var/lib/sss/db/*.ldb</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #16766d" x="520" y="196" width="200" height="53" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #16766d; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="528" y="213">
+        <tspan x="528" y="213">LDAP — каталог AD</tspan>
+      </text>
+      <text font-size="7.04" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="228">
+        <tspan x="528" y="228">Пользователь, SID, группы</tspan>
+      </text>
+      <text font-size="7.04" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="241">
+        <tspan x="528" y="241">Источник: каталог Samba AD</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #16766d" x="520" y="264" width="200" height="53" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #16766d; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="528" y="281">
+        <tspan x="528" y="281">Kerberos KDC • пароль</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="296">
+        <tspan x="528" y="296">Проверка доказательства знания</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="309">
+        <tspan x="528" y="309">пароля → билет TGT / отказ</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #ffffff; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #16766d" x="520" y="332" width="200" height="53" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #16766d; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="528" y="349">
+        <tspan x="528" y="349">Правила домена</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="364">
+        <tspan x="528" y="364">Атрибуты и ограничения учётки</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="377">
+        <tspan x="528" y="377">Данные для проверки доступа</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #e4f4ee; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #16766d" x="520" y="406" width="200" height="116" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #16766d; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="528" y="423">
+        <tspan x="528" y="423">База Samba AD на dc1</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="438">
+        <tspan x="528" y="438">Основная доменная запись</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="451">
+        <tspan x="528" y="451">Логин, SID, группы и атрибуты</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="464">
+        <tspan x="528" y="464">Секреты доменной учётки</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="477">
+        <tspan x="528" y="477">Каталог домена хранится здесь</tspan>
+      </text>
+      <text font-size="6.88" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="528" y="490">
+        <tspan x="528" y="490">Клиент хранит только свой кеш</tspan>
+      </text>
+    </g>
+    <g>
+      <rect style="fill: #eaf3fb; fill-opacity: 1; stroke-opacity: 1; stroke-width: 0.8; stroke-linejoin: round; stroke: #2867a0" x="40" y="462" width="400" height="69" rx="2.4" ry="2.4"/>
+      <text font-size="9.76" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="48" y="479">
+        <tspan x="48" y="479">4. Сеанс GNOME запускается на pc2</tspan>
+      </text>
+      <text font-size="7.36" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="494">
+        <tspan x="48" y="494">UID 1164001108 • GID 1164000513 • e09same@LAB.TEST</tspan>
+      </text>
+      <text font-size="7.36" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="507">
+        <tspan x="48" y="507">HOME=/home/LAB.TEST/e09same</tspan>
+      </text>
+      <text font-size="7.36" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="48" y="520">
+        <tspan x="48" y="520">Билет: KEYRING:persistent:1164001108</tspan>
+      </text>
+    </g>
+  </g>
+  <g id="Подписи">
+    <text font-size="13.6" style="fill: #203447; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="20" y="27">
+      <tspan x="20" y="27">Как pc2 обрабатывает доменный вход</tspan>
+    </text>
+    <text font-size="7.2" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="20" y="43">
+      <tspan x="20" y="43">Пример: e09same@lab.test • состояние после исправления E09 • сервер доступен</tspan>
+    </text>
+    <text font-size="9.12" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="40" y="81">
+      <tspan x="40" y="81">Клиент • pc2.lab.test • 10.77.0.22</tspan>
+    </text>
+    <text font-size="9.12" style="fill: #16766d; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="520" y="81">
+      <tspan x="520" y="81">Сервер • dc1.lab.test</tspan>
+    </text>
+    <text font-size="8.8" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:700" x="272" y="187">
+      <tspan x="272" y="187">SSSD на pc2</tspan>
+    </text>
+    <text font-size="5.92" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="171" y="162.4">
+      <tspan x="171" y="162.4">имя</tspan>
+    </text>
+    <text font-size="5.28" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="240" y="211">
+      <tspan x="240" y="211">данные</tspan>
+    </text>
+    <text font-size="5.28" style="fill: #a65c16; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="240" y="284.6">
+      <tspan x="240" y="284.6">auth</tspan>
+    </text>
+    <text font-size="4.8" style="fill: #a65c16; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="241" y="352">
+      <tspan x="241" y="352">account</tspan>
+    </text>
+    <text font-size="5.28" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="474" y="215.5">
+      <tspan x="474" y="215.5">LDAP 389</tspan>
+    </text>
+    <text font-size="5.28" style="fill: #a65c16; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="474" y="283.5">
+      <tspan x="474" y="283.5">Kerberos 88</tspan>
+    </text>
+    <text font-size="5.28" style="fill: #a65c16; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="474" y="351.5">
+      <tspan x="474" y="351.5">данные AD</tspan>
+    </text>
+    <text font-size="5.12" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:middle;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="474" y="115">
+      <tspan x="474" y="115">DNS/SRV</tspan>
+    </text>
+    <text font-size="5.92" style="fill: #2867a0; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="40" y="436">
+      <tspan x="40" y="436">Пароль верен и вход разрешён → открыть сеанс</tspan>
+    </text>
+    <text font-size="6.08" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="20" y="561">
+      <tspan x="20" y="561">NSS-запросы и PAM-проверки могут повторяться. Доменную запись не добавляют в /etc/passwd.</tspan>
+    </text>
+    <text font-size="5.92" style="fill: #56697a; fill-opacity: 1; stroke: none;text-anchor:start;font-family:DejaVu Sans;font-style:normal;font-weight:normal" x="20" y="575">
+      <tspan x="20" y="575">Офлайн-вход по паролю зависит от настройки кеша и прежнего успешного входа; на стенде не проверялся.</tspan>
+    </text>
+  </g>
+</svg>
